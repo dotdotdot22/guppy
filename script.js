@@ -66,3 +66,5 @@ const initial = location.hash.slice(1);
 if (meta[initial]) {
   openPage(initial);
 }
+const initial = location.hash.slice(1);
+openPage(meta[initial] ? initial : "about");
