@@ -20,16 +20,16 @@
       </header>
 
       <section class="profile-header">
-        <button class="avatar-frame profile-avatar about-trigger" aria-label="About Guppy">
-          <img src="assets/guppy-avatar.png" alt="">
-        </button>
+        <div class="avatar-frame profile-avatar new-user-avatar" aria-hidden="true">
+          <span class="new-user-glyph">👤</span>
+        </div>
         <div class="profile-copy">
           <div class="profile-name">
-            <strong>Guppy</strong>
+            <strong>New user</strong>
             <span>(Available)</span>
             <span class="tiny-chevron">⌄</span>
           </div>
-          <button class="personal-message about-trigger">download and read more about this app</button>
+          <div class="personal-message static-message">welcome :)</div>
         </div>
       </section>
 
@@ -41,10 +41,10 @@
       </div>
 
       <section class="roster-scroll">
-        <div class="self-row about-trigger">
-          <div class="avatar-frame self-avatar"><img src="assets/guppy-avatar.png" alt=""></div>
+        <div class="self-row account-row">
+          <div class="avatar-frame self-avatar new-user-avatar"><span class="new-user-glyph">👤</span></div>
           <div>
-            <div class="row-name">Guppy</div>
+            <div class="row-name">New user</div>
             <div class="row-status">Available</div>
           </div>
           <span class="row-chevron">⌄</span>
@@ -52,11 +52,24 @@
 
         <div class="section-heading">
           <span class="section-chevron">⌄</span>
+          <span>Favourites (1)</span>
+        </div>
+
+        <nav class="contacts favourites" aria-label="Guppy website navigation">
+          <a href="#about" class="contact favourite-contact active" data-page="about">
+            <span class="presence online"></span>
+            <span class="avatar-frame mini favourite-mini"><img src="assets/guppy-avatar.png" alt=""></span>
+            <span class="contact-text"><strong>Guppy</strong><small>Download and read more about this app</small></span>
+          </a>
+        </nav>
+
+        <div class="section-heading friends-heading">
+          <span class="section-chevron">⌄</span>
           <span>Friends (5)</span>
         </div>
 
         <nav class="contacts" aria-label="Guppy website navigation">
-          <a href="#features" class="contact active" data-page="features">
+          <a href="#features" class="contact" data-page="features">
             <span class="presence online"></span>
             <span class="avatar-frame mini"><span class="letter">F</span></span>
             <span class="contact-text"><strong>Features</strong><small>What Guppy can do</small></span>
@@ -94,7 +107,7 @@
       <header class="title-strip">
         <div class="title-left">
           <span class="bubble-icon">▣</span>
-          <span id="window-title">Features</span>
+          <span id="window-title">Guppy</span>
         </div>
         <div class="window-buttons" aria-hidden="true">
           <span>−</span><span>×</span>
@@ -112,13 +125,13 @@
             <img src="assets/guppy-avatar.png" alt="">
           </div>
           <div class="chat-contact-copy">
-            <div><strong id="contact-title">Features</strong> <span>(Available)</span></div>
-            <small id="contact-pm">What Guppy can do.</small>
+            <div><strong id="contact-title">Guppy</strong> <span>(Available)</span></div>
+            <small id="contact-pm">Download and read more about this app.</small>
           </div>
         </section>
 
         <section class="transcript" id="transcript">
-          <article class="page active" data-page="features">
+          <article class="page" data-page="features">
             <p class="speaker">Guppy says:</p>
             <p>This is the Features conversation.</p>
             <p>Feature details and screenshots will go here.</p>
@@ -148,10 +161,23 @@
             <p>Dated development notes will go here.</p>
           </article>
 
-          <article class="page" data-page="about">
-            <p class="speaker">Guppy says:</p>
-            <p>Guppy is a cross-platform instant messenger.</p>
-            <p>Download links and the short project introduction will go here.</p>
+          <article class="page active about-page" data-page="about">
+            <div class="about-copy">
+              <p class="speaker">Guppy says:</p>
+              <p>Welcome to Guppy.</p>
+              <p>Guppy is a cross-platform instant messenger with ink, nudges, personal messages, themes and end-to-end encryption.</p>
+              <p>This page is the project hub. Use the contact list to read about features, privacy, updates, source code and development notes.</p>
+            </div>
+
+            <div class="download-dock">
+              <div class="download-label">Download Guppy</div>
+              <div class="download-buttons">
+                <a href="#" class="download-button">macOS</a>
+                <a href="#" class="download-button">Windows</a>
+                <a href="#" class="download-button">iOS</a>
+                <a href="#" class="download-button">Android</a>
+              </div>
+            </div>
           </article>
         </section>
       </div>
