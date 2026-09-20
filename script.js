@@ -17,25 +17,13 @@ const messageBox = document.getElementById("message-box");
 
 function openPage(name) {
   const item = meta[name] || meta.features;
-
-  pages.forEach(page => {
-    page.classList.toggle("active", page.dataset.page === name);
-  });
-
-  contacts.forEach(contact => {
-    contact.classList.toggle("active", contact.dataset.page === name);
-  });
-
+  pages.forEach(page => page.classList.toggle("active", page.dataset.page === name));
+  contacts.forEach(contact => contact.classList.toggle("active", contact.dataset.page === name));
   windowTitle.textContent = item.title;
   contactTitle.textContent = item.title;
   contactPM.textContent = item.pm;
-
   transcript.scrollTop = 0;
-
-  if (window.innerWidth <= 760) {
-    document.body.classList.add("show-chat");
-  }
-
+  if (window.innerWidth <= 760) document.body.classList.add("show-chat");
   history.replaceState(null, "", "#" + name);
 }
 
@@ -61,10 +49,5 @@ messageBox.addEventListener("click", () => {
   messageBox.textContent = "Download the app to send messages :)";
 });
 
-const initial = location.hash.slice(1);
-
-if (meta[initial]) {
-  openPage(initial);
-}
 const initial = location.hash.slice(1);
 openPage(meta[initial] ? initial : "about");
