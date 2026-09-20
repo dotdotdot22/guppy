@@ -1,77 +1,68 @@
-const pages = {
-  features: {
-    title: "Features",
-    status: "Explore what Guppy can do."
-  },
-  privacy: {
-    title: "Privacy",
-    status: "Encryption and privacy information."
-  },
-  updates: {
-    title: "Updates",
-    status: "Releases and download information."
-  },
-  source: {
-    title: "Source",
-    status: "Source code and licence information."
-  },
-  devlog: {
-    title: "Devlog",
-    status: "Development notes and progress."
-  },
-  about: {
-    title: "Guppy",
-    status: "download and read more about this app"
-  }
+const meta = {
+  features: { title: "Features", pm: "What Guppy can do." },
+  privacy:  { title: "Privacy",  pm: "Encryption and privacy." },
+  updates:  { title: "Updates",  pm: "Releases and downloads." },
+  source:   { title: "Source",   pm: "GitHub and licence." },
+  devlog:   { title: "Devlog",   pm: "Development notes." },
+  about:    { title: "Guppy",    pm: "download and read more about this app" }
 };
 
-const links = document.querySelectorAll("[data-page]");
-const conversationPages = document.querySelectorAll(".conversation-page");
-const title = document.getElementById("conversation-title");
-const contactName = document.getElementById("contact-name");
-const contactStatus = document.getElementById("contact-status");
-const scrollArea = document.getElementById("conversation-scroll");
+const pages = [...document.querySelectorAll(".page")];
+const contacts = [...document.querySelectorAll(".contact")];
+const windowTitle = document.getElementById("window-title");
+const contactTitle = document.getElementById("contact-title");
+const contactPM = document.getElementById("contact-pm");
+const transcript = document.getElementById("transcript");
 const messageBox = document.getElementById("message-box");
 
-function openPage(page) {
-  const data = pages[page] || pages.features;
+function openPage(name) {
+  const item = meta[name] || meta.features;
 
-  conversationPages.forEach(panel => {
-    panel.classList.toggle("active", panel.dataset.page === page);
+  pages.forEach(page => {
+    page.classList.toggle("active", page.dataset.page === name);
   });
 
-  document.querySelectorAll(".contact-link").forEach(link => {
-    link.classList.toggle("active", link.dataset.page === page);
+  contacts.forEach(contact => {
+    contact.classList.toggle("active", contact.dataset.page === name);
   });
 
-  title.textContent = data.title;
-  contactName.textContent = data.title;
-  contactStatus.textContent = data.status;
+  windowTitle.textContent = item.title;
+  contactTitle.textContent = item.title;
+  contactPM.textContent = item.pm;
 
-  scrollArea.scrollTop = 0;
+  transcript.scrollTop = 0;
 
   if (window.innerWidth <= 760) {
-    document.body.classList.add("show-conversation");
+    document.body.classList.add("show-chat");
   }
+
+  history.replaceState(null, "", "#" + name);
 }
 
-links.forEach(link => {
-  link.addEventListener("click", event => {
+contacts.forEach(contact => {
+  contact.addEventListener("click", event => {
     event.preventDefault();
-    openPage(link.dataset.page);
+    openPage(contact.dataset.page);
   });
 });
 
-const backButton = document.querySelector(".actionbar span:first-child");
-
-if (backButton) {
-  backButton.addEventListener("click", () => {
-    if (window.innerWidth <= 760) {
-      document.body.classList.remove("show-conversation");
-    }
+document.querySelectorAll(".about-trigger").forEach(el => {
+  el.addEventListener("click", event => {
+    event.preventDefault();
+    openPage("about");
   });
-}
+});
+
+document.querySelector(".mobile-back").addEventListener("click", () => {
+  document.body.classList.remove("show-chat");
+});
 
 messageBox.addEventListener("click", () => {
   messageBox.textContent = "Download the app to send messages :)";
 });
+
+const initial = location.hash.slice(1);
+
+if (meta[initial]) {
+  openPage(initial);
+}
