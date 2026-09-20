@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#23b89a" />
+  <title>Guppy — Messenger</title>
+  <meta name="description" content="Guppy is a cross-platform instant messenger with end-to-end encrypted chats, ink messages, nudges, themes, personal messages and presence." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="water-bg" aria-hidden="true">
+    <span class="bubble b1"></span><span class="bubble b2"></span><span class="bubble b3"></span>
+    <span class="bubble b4"></span><span class="bubble b5"></span><span class="bubble b6"></span>
+    <svg class="fish fish-a" viewBox="0 0 120 70"><path d="M26 35c18-22 50-25 68-5 8 8 9 13 0 21-19 17-50 13-68-5L5 58l6-23-6-23 21 12c0 0 0 0 0 0Z"/><circle cx="82" cy="31" r="3"/></svg>
+    <svg class="fish fish-b" viewBox="0 0 120 70"><path d="M26 35c18-22 50-25 68-5 8 8 9 13 0 21-19 17-50 13-68-5L5 58l6-23-6-23 21 12Z"/><circle cx="82" cy="31" r="3"/></svg>
+  </div>
+
+  <header class="site-header glass">
+    <a class="brand" href="#top" aria-label="Guppy home"><span class="brand-fish">◖</span><strong>Guppy</strong></a>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#screenshots">Screenshots</a>
+      <a href="#updates">Updates</a>
+      <a href="#source">Source</a>
+      <a href="#privacy">Privacy</a>
+    </nav>
+    <a class="header-button" href="#download">Download</a>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="presence-dot"></span> Guppy Messenger</div>
+        <h1>Instant messaging,<br><span>with the little things kept in.</span></h1>
+        <p class="lead">Cross-platform chat with ink messages, nudges, personal messages, presence, themes and end-to-end encryption.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#download">Download</a>
+          <a class="button secondary" href="#source">View source</a>
+        </div>
+        <div class="platform-row" aria-label="Platforms">
+          <span>macOS</span><span>Windows</span><span>iOS</span><span>Android</span>
+        </div>
+      </div>
+
+      <div class="hero-stage" aria-label="Guppy app screenshots">
+        <div class="glow"></div>
+        <figure class="app-shot shot-back"><img src="assets/roster-aqua.png" alt="Guppy contact list in the aqua theme" /></figure>
+        <figure class="app-shot shot-front"><img src="assets/chat-rose.png" alt="Guppy conversation showing ink messages" /></figure>
+        <div class="status-chip glass"><span class="presence-dot"></span><div><strong>dot</strong><small>Available</small></div></div>
+      </div>
+    </section>
+
+    <section id="features" class="section shell">
+      <div class="section-heading"><span>Features</span><h2>Built for conversation</h2></div>
+      <div class="feature-grid">
+        <article class="feature-card aqua"><div class="icon">✎</div><h3>Ink</h3><p>Draw and send handwritten messages directly inside a conversation.</p></article>
+        <article class="feature-card rose"><div class="icon">◌</div><h3>Nudges</h3><p>Send a nudge when a normal message is not quite enough.</p></article>
+        <article class="feature-card amber"><div class="icon">●</div><h3>Presence</h3><p>Available, away, busy and offline states, with personal messages.</p></article>
+        <article class="feature-card green"><div class="icon">♫</div><h3>Now playing</h3><p>Optionally show what you are listening to alongside your status.</p></article>
+        <article class="feature-card blue"><div class="icon">◫</div><h3>Themes</h3><p>Change the colour and feel of the whole app without changing how it works.</p></article>
+        <article class="feature-card mint"><div class="icon">⌁</div><h3>Cross-platform</h3><p>One conversation across macOS, Windows, iOS and Android.</p></article>
+      </div>
+    </section>
+
+    <section id="screenshots" class="section shell gallery-section">
+      <div class="section-heading"><span>Screenshots</span><h2>Choose your tank</h2></div>
+      <div class="theme-tabs" role="tablist" aria-label="Screenshot theme">
+        <button class="theme-tab active" data-theme="rose">Rose</button>
+        <button class="theme-tab" data-theme="aqua">Aqua</button>
+        <button class="theme-tab" data-theme="green">Green</button>
+      </div>
+      <div class="gallery" data-gallery="rose">
+        <figure><img src="assets/roster-rose.png" alt="Guppy rose roster theme" /><figcaption>Contact list</figcaption></figure>
+        <figure class="featured"><img src="assets/chat-rose.png" alt="Guppy rose conversation theme" /><figcaption>Conversation + ink</figcaption></figure>
+      </div>
+      <div class="gallery hidden" data-gallery="aqua">
+        <figure class="featured"><img src="assets/roster-aqua.png" alt="Guppy aqua roster theme" /><figcaption>Aqua theme</figcaption></figure>
+      </div>
+      <div class="gallery hidden" data-gallery="green">
+        <figure><img src="assets/roster-green.png" alt="Guppy green roster theme" /><figcaption>Contact list</figcaption></figure>
+        <figure class="featured"><img src="assets/chat-green.png" alt="Guppy green conversation theme" /><figcaption>Conversation + nudge</figcaption></figure>
+      </div>
+    </section>
+
+    <section id="download" class="section shell download-section">
+      <div class="section-heading"><span>Download</span><h2>Get Guppy</h2></div>
+      <div class="downloads">
+        <article><div><strong>macOS</strong><small>Apple silicon + Intel</small></div><button disabled>Coming soon</button></article>
+        <article><div><strong>Windows</strong><small>Desktop build</small></div><button disabled>Coming soon</button></article>
+        <article><div><strong>iOS</strong><small>iPhone + iPad</small></div><button disabled>Coming soon</button></article>
+        <article><div><strong>Android</strong><small>Phone + tablet</small></div><button disabled>Coming soon</button></article>
+      </div>
+      <p class="tiny-note">Release files and version notes will live here.</p>
+    </section>
+
+    <section id="updates" class="section shell updates-section">
+      <div class="section-heading"><span>Updates</span><h2>Development log</h2></div>
+      <div class="update-list">
+        <article class="update glass"><time>20 Sep 2026</time><div><h3>Cross-platform testing</h3><p>Continued work on Matrix timeline handling, encrypted messaging and desktop/mobile parity.</p></div></article>
+        <article class="update glass"><time>20 Sep 2026</time><div><h3>Ink and nudge work</h3><p>Testing custom conversation features across local devices and accounts.</p></div></article>
+        <article class="update glass"><time>19 Sep 2026</time><div><h3>Desktop themes</h3><p>Rose, aqua, green and amber chrome are now taking shape across the desktop app.</p></div></article>
+      </div>
+    </section>
+
+    <section id="source" class="section shell split-section">
+      <div>
+        <div class="section-heading"><span>Open source</span><h2>Source code</h2></div>
+        <p>Guppy will be published with its source code, build information and release notes.</p>
+        <div class="code-window">
+          <div class="code-title"><span></span><span></span><span></span><b>guppy</b></div>
+          <pre><code>MessagingBackend
+  ├─ MatrixBackend
+  ├─ Session
+  └─ SwiftUI / desktop clients
+
+Matrix protocol
+End-to-end encrypted rooms
+Custom Guppy conversation features</code></pre>
+        </div>
+        <a class="button secondary disabled" href="#" aria-disabled="true">Repository coming soon</a>
+      </div>
+      <div id="privacy" class="privacy-card">
+        <div class="lock">⌾</div>
+        <h2>Privacy</h2>
+        <p>Guppy conversations use end-to-end encrypted Matrix rooms.</p>
+        <dl>
+          <div><dt>Messages</dt><dd>End-to-end encrypted</dd></div>
+          <div><dt>Ink</dt><dd>Sent inside encrypted conversations</dd></div>
+          <div><dt>Account sessions</dt><dd>Stored locally on your device</dd></div>
+          <div><dt>Advertising</dt><dd>None</dd></div>
+        </dl>
+        <small>A full privacy policy will be published before public release.</small>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell footer">
+    <div class="brand"><span class="brand-fish">◖</span><strong>Guppy</strong></div>
+    <p>Cross-platform instant messaging.</p>
+    <span>© 2026 Guppy</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
