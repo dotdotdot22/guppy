@@ -1,154 +1,174 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Guppy</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="app-shell">
-    <aside class="roster-pane">
-      <div class="titlebar">
-        <div class="titlebar-left">
-          <span class="app-mark">◒</span>
-          <strong>Guppy</strong>
+  <main class="guppy-desktop">
+    <section class="window roster-window">
+      <header class="title-strip">
+        <div class="title-left">
+          <span class="bubble-icon">▣</span>
+          <span>Guppy</span>
         </div>
-        <div class="window-controls" aria-hidden="true">
+        <div class="window-buttons" aria-hidden="true">
           <span>−</span><span>×</span>
         </div>
-      </div>
+      </header>
 
-      <section class="self-card">
-        <div class="avatar large-avatar">G</div>
-        <div class="self-copy">
-          <div class="name-line">
+      <section class="profile-header">
+        <button class="avatar-frame profile-avatar about-trigger" aria-label="About Guppy">
+          <img src="assets/guppy-avatar.png" alt="">
+        </button>
+        <div class="profile-copy">
+          <div class="profile-name">
             <strong>Guppy</strong>
-            <span class="status">(Available)</span>
+            <span>(Available)</span>
+            <span class="tiny-chevron">⌄</span>
           </div>
-          <button class="personal-message" data-page="about">
-            download and read more about this app
-          </button>
+          <button class="personal-message about-trigger">download and read more about this app</button>
         </div>
       </section>
 
       <div class="search-strip">
-        <input type="text" placeholder="Search contacts..." disabled />
-        <span>⌕</span>
-      </div>
-
-      <nav class="contact-nav" aria-label="Site navigation">
-        <a class="contact-link active" href="#features" data-page="features">
-          <span class="presence-dot"></span>
-          <span class="mini-avatar">F</span>
-          <span>Features</span>
-        </a>
-        <a class="contact-link" href="#privacy" data-page="privacy">
-          <span class="presence-dot"></span>
-          <span class="mini-avatar">P</span>
-          <span>Privacy</span>
-        </a>
-        <a class="contact-link" href="#updates" data-page="updates">
-          <span class="presence-dot"></span>
-          <span class="mini-avatar">U</span>
-          <span>Updates</span>
-        </a>
-        <a class="contact-link" href="#source" data-page="source">
-          <span class="presence-dot"></span>
-          <span class="mini-avatar">S</span>
-          <span>Source</span>
-        </a>
-        <a class="contact-link" href="#devlog" data-page="devlog">
-          <span class="presence-dot"></span>
-          <span class="mini-avatar">D</span>
-          <span>Devlog</span>
-        </a>
-      </nav>
-
-      <div class="roster-footer">
-        <div class="ad-strip">Your advertisement here (there is no advertisement)</div>
-        <div class="bottom-menu">
-          <span>Contacts</span>
-          <span>Tools</span>
-          <span>Help</span>
-          <span>⋮</span>
+        <div class="search-field">
+          <span>Search contacts...</span>
+          <span class="search-glyph">⌕</span>
         </div>
       </div>
-    </aside>
 
-    <section class="conversation-pane">
-      <div class="titlebar">
-        <div class="titlebar-left">
-          <span class="app-mark">◒</span>
-          <strong id="conversation-title">Features</strong>
+      <section class="roster-scroll">
+        <div class="self-row about-trigger">
+          <div class="avatar-frame self-avatar"><img src="assets/guppy-avatar.png" alt=""></div>
+          <div>
+            <div class="row-name">Guppy</div>
+            <div class="row-status">Available</div>
+          </div>
+          <span class="row-chevron">⌄</span>
         </div>
-        <div class="window-controls" aria-hidden="true">
+
+        <div class="section-heading">
+          <span class="section-chevron">⌄</span>
+          <span>Friends (5)</span>
+        </div>
+
+        <nav class="contacts" aria-label="Guppy website navigation">
+          <a href="#features" class="contact active" data-page="features">
+            <span class="presence online"></span>
+            <span class="avatar-frame mini"><span class="letter">F</span></span>
+            <span class="contact-text"><strong>Features</strong><small>What Guppy can do</small></span>
+          </a>
+          <a href="#privacy" class="contact" data-page="privacy">
+            <span class="presence online"></span>
+            <span class="avatar-frame mini"><span class="letter">P</span></span>
+            <span class="contact-text"><strong>Privacy</strong><small>Encryption & data</small></span>
+          </a>
+          <a href="#updates" class="contact" data-page="updates">
+            <span class="presence away"></span>
+            <span class="avatar-frame mini"><span class="letter">U</span></span>
+            <span class="contact-text"><strong>Updates</strong><small>Releases & downloads</small></span>
+          </a>
+          <a href="#source" class="contact" data-page="source">
+            <span class="presence online"></span>
+            <span class="avatar-frame mini"><span class="letter">S</span></span>
+            <span class="contact-text"><strong>Source</strong><small>GitHub & licence</small></span>
+          </a>
+          <a href="#devlog" class="contact" data-page="devlog">
+            <span class="presence offline"></span>
+            <span class="avatar-frame mini"><span class="letter">D</span></span>
+            <span class="contact-text"><strong>Devlog</strong><small>Development notes</small></span>
+          </a>
+        </nav>
+      </section>
+
+      <footer class="roster-footer">
+        <div class="ad-line">Your advertisement here (there is no advertisement)</div>
+        <div class="menu-bar"><span>Contacts</span><span>Tools</span><span>Help</span><span>⋮</span></div>
+      </footer>
+    </section>
+
+    <section class="window chat-window">
+      <header class="title-strip">
+        <div class="title-left">
+          <span class="bubble-icon">▣</span>
+          <span id="window-title">Features</span>
+        </div>
+        <div class="window-buttons" aria-hidden="true">
           <span>−</span><span>×</span>
         </div>
+      </header>
+
+      <div class="action-bar">
+        <button class="mobile-back" aria-label="Back">‹</button>
+        <span>Photos</span><span>Files</span><span>Invite</span><span>Block</span>
       </div>
 
-      <div class="actionbar">
-        <span>‹</span>
-        <span>Photos</span>
-        <span>Files</span>
-        <span>Invite</span>
-        <span>Block</span>
-      </div>
-
-      <section class="contact-header">
-        <div class="avatar">G</div>
-        <div>
-          <div class="name-line">
-            <strong id="contact-name">Features</strong>
-            <span class="status">(Available)</span>
+      <div class="conversation-body">
+        <section class="contact-header">
+          <div class="avatar-frame chat-avatar">
+            <img src="assets/guppy-avatar.png" alt="">
           </div>
-          <em id="contact-status">Explore what Guppy can do.</em>
-        </div>
-      </section>
+          <div class="chat-contact-copy">
+            <div><strong id="contact-title">Features</strong> <span>(Available)</span></div>
+            <small id="contact-pm">What Guppy can do.</small>
+          </div>
+        </section>
 
-      <section class="conversation-scroll" id="conversation-scroll">
-        <article class="conversation-page active" data-page="features">
-          <p class="speaker">Guppy says:</p>
-          <p>This is the shell for the Features conversation.</p>
-          <p>Later, this area can hold short explanations, screenshots, download links, or any feature details you want.</p>
-        </article>
+        <section class="transcript" id="transcript">
+          <article class="page active" data-page="features">
+            <p class="speaker">Guppy says:</p>
+            <p>This is the Features conversation.</p>
+            <p>Feature details and screenshots will go here.</p>
+          </article>
 
-        <article class="conversation-page" data-page="privacy">
-          <p class="speaker">Guppy says:</p>
-          <p>This is the Privacy conversation.</p>
-          <p>Later, this can explain end-to-end encryption, Matrix, data handling, and privacy details.</p>
-        </article>
+          <article class="page" data-page="privacy">
+            <p class="speaker">Guppy says:</p>
+            <p>This is the Privacy conversation.</p>
+            <p>End-to-end encryption and data handling information will go here.</p>
+          </article>
 
-        <article class="conversation-page" data-page="updates">
-          <p class="speaker">Guppy says:</p>
-          <p>This is the Updates conversation.</p>
-          <p>Later, this can hold release notes and download links.</p>
-        </article>
+          <article class="page" data-page="updates">
+            <p class="speaker">Guppy says:</p>
+            <p>This is the Updates conversation.</p>
+            <p>Releases and downloads will go here.</p>
+          </article>
 
-        <article class="conversation-page" data-page="source">
-          <p class="speaker">Guppy says:</p>
-          <p>This is the Source conversation.</p>
-          <p>Later, this can link to GitHub, licence information, and build instructions.</p>
-        </article>
+          <article class="page" data-page="source">
+            <p class="speaker">Guppy says:</p>
+            <p>This is the Source conversation.</p>
+            <p>GitHub, licence and build information will go here.</p>
+          </article>
 
-        <article class="conversation-page" data-page="devlog">
-          <p class="speaker">Guppy says:</p>
-          <p>This is the Devlog conversation.</p>
-          <p>Later, this can hold dated development notes.</p>
-        </article>
+          <article class="page" data-page="devlog">
+            <p class="speaker">dot says:</p>
+            <p>This is the Devlog conversation.</p>
+            <p>Dated development notes will go here.</p>
+          </article>
 
-        <article class="conversation-page" data-page="about">
-          <p class="speaker">Guppy says:</p>
-          <p>Guppy is a cross-platform instant messenger with ink, nudges, personal messages, themes and end-to-end encryption.</p>
-          <p><a href="#" class="fake-download">Download links will go here.</a></p>
-        </article>
-      </section>
-
-      <div class="composer">
-        <div class="composer-avatar">G</div>
-        <button id="message-box" class="message-box" type="button">Type a message...</button>
-        <button class="send-button" disabled>Send</button>
+          <article class="page" data-page="about">
+            <p class="speaker">Guppy says:</p>
+            <p>Guppy is a cross-platform instant messenger.</p>
+            <p>Download links and the short project introduction will go here.</p>
+          </article>
+        </section>
       </div>
+
+      <section class="composer-shell">
+        <div class="avatar-frame composer-avatar"><img src="assets/guppy-avatar.png" alt=""></div>
+        <div class="composer-main">
+          <button id="message-box" class="message-box">Type a message...</button>
+          <div class="composer-toolbar">
+            <div class="tool-left">
+              <button>🙂</button><span class="nudge">‹‹ 😵 ››</span>
+            </div>
+            <div class="mode-tabs"><span>⌁</span><strong>A</strong></div>
+          </div>
+        </div>
+        <div class="composer-side"><span>⌃</span><button disabled>Send</button></div>
+      </section>
     </section>
   </main>
 
