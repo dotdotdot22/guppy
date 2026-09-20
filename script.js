@@ -1,10 +1,10 @@
 const meta = {
-  features: { title: "Features", pm: "What Guppy can do." },
-  privacy:  { title: "Privacy",  pm: "Encryption and privacy." },
-  updates:  { title: "Updates",  pm: "Releases and downloads." },
-  source:   { title: "Source",   pm: "GitHub and licence." },
-  devlog:   { title: "Devlog",   pm: "Development notes." },
-  about:    { title: "Guppy",    pm: "download and read more about this app" }
+  features: { title: "Features", pm: "What Guppy can do.", image: "assets/features.png" },
+  privacy:  { title: "Privacy",  pm: "Encryption and privacy.", image: "assets/privacy.png" },
+  updates:  { title: "Updates",  pm: "Releases and downloads.", image: "assets/updates.png" },
+  source:   { title: "Source",   pm: "GitHub and licence.", image: "assets/source.png" },
+  devlog:   { title: "Devlog",   pm: "Development notes.", image: "assets/devlog.png" },
+  about:    { title: "Guppy",    pm: "download and read more about this app", image: "assets/guppy-avatar.png" }
 };
 
 const pages = [...document.querySelectorAll(".page")];
@@ -12,6 +12,7 @@ const contacts = [...document.querySelectorAll(".contact")];
 const windowTitle = document.getElementById("window-title");
 const contactTitle = document.getElementById("contact-title");
 const contactPM = document.getElementById("contact-pm");
+const chatAvatarImage = document.getElementById("chat-avatar-image");
 const transcript = document.getElementById("transcript");
 const messageBox = document.getElementById("message-box");
 
@@ -22,6 +23,8 @@ function openPage(name) {
   windowTitle.textContent = item.title;
   contactTitle.textContent = item.title;
   contactPM.textContent = item.pm;
+  chatAvatarImage.src = item.image;
+  chatAvatarImage.alt = item.title;
   transcript.scrollTop = 0;
   if (window.innerWidth <= 760) document.body.classList.add("show-chat");
   history.replaceState(null, "", "#" + name);
